@@ -1,0 +1,36 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/CALPULLIX_VIRTUAL_MANAGER_ASSISTANT?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+    password: adminadmin
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    show-sql: false
+     
+                  
+logging:
+  level:
+    org:
+      springframework.web: INFO
+      springframework.web.servlet.DispatcherServlet: DEBUG
+      springframework.cloud.sleuth: DEBUG
+    com.calpullix: DEBUG
+  pattern:
+    level: '[%X{data}%thread][%X{X-B3-TraceId:-}]-%5p'
+    
+    
+management:
+  endpoints:
+    web:
+      base-path: /actuator
+  helath:
+    defaults:
+      enabled: true
+    jms:
+      enabled: false 
+  
+      
+      
+  
+     
+ 
